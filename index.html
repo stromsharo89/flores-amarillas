@@ -75,7 +75,7 @@ h1{position:relative;font-family:var(--font-t);font-style:italic;font-weight:800
 .tallo svg{position:absolute;left:calc(var(--s) / -2);width:var(--s);height:var(--s);bottom:calc(var(--h) - var(--s) * .45);filter:drop-shadow(0 4px 6px rgba(0,0,0,.35))}
 @keyframes mece{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
 
-#musica{position:fixed;right:max(14px,env(safe-area-inset-right,0px));top:max(14px,env(safe-area-inset-top,0px));z-index:20;display:flex;gap:.5rem;align-items:center}
+#musica{position:fixed;right:max(14px,env(safe-area-inset-right,0px));top:max(14px,env(safe-area-inset-top,0px));z-index:60;display:flex;gap:.5rem;align-items:center}
 #musica button{width:52px;height:52px;border-radius:50%;background:linear-gradient(#ffe066,#ffc21a);color:var(--centro);font-size:1.4rem;box-shadow:0 6px 20px rgba(0,0,0,.4)}
 #archivo{display:none;font-size:.85rem;background:var(--crema);color:var(--centro);padding:.6rem .9rem;border-radius:14px}
 #archivo.ver{display:block}
@@ -239,7 +239,7 @@ h1{position:relative;font-family:var(--font-t);font-style:italic;font-weight:800
   // Música
   var audio=document.getElementById('audio'),pp=document.getElementById('pp'),
       archivo=document.getElementById('archivo'),pick=document.getElementById('pick');
-  var rutas=['FLORES AMARILLAS.mp3','FLORES AMARILLAS.MP3','flores amarillas.mp3'],k=0;
+  var rutas=['FLORES AMARILLAS.mp3','FLORES AMARILLAS.MP3','Flores Amarillas.mp3','flores amarillas.mp3','FLORES AMARILLAS.mp3.mp3','FLORES_AMARILLAS.mp3','FLORES-AMARILLAS.mp3','FLORES AMARILLAS.m4a','FLORES AMARILLAS.wav'],k=0;
   function cargar(){ if(k>=rutas.length){archivo.classList.add('ver');return} audio.src=encodeURI(rutas[k++]); }
   audio.addEventListener('error',cargar); cargar();
   pick.addEventListener('change',function(){
@@ -247,9 +247,9 @@ h1{position:relative;font-family:var(--font-t);font-style:italic;font-weight:800
   });
   document.getElementById('abrir').addEventListener('click',function(){
     document.getElementById('entrada').classList.add('fuera');
-    audio.play().catch(function(){});
+    audio.play().catch(function(){archivo.classList.add('ver');});
   });
-  pp.addEventListener('click',function(){ if(audio.paused){audio.play().catch(function(){});}else{audio.pause();} });
+  pp.addEventListener('click',function(){ if(audio.paused){audio.play().catch(function(){archivo.classList.add('ver');});}else{audio.pause();} });
   audio.addEventListener('play',function(){pp.textContent='🎵'});
   audio.addEventListener('pause',function(){pp.textContent='▶️'});
 })();
