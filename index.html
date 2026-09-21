@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flores amarillas 🌼</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,600;1,800&family=Caveat:wght@500;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0c2418; --hoja:#1d5a36; --sol:#ffd23f; --miel:#f6a800; --crema:#fff6cf; --centro:#5a3210;
+  --font-t:'Fraunces',Georgia,serif; --font-m:'Caveat','Segoe Script',cursive; --font-b:'Nunito',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 0%,rgba(255,210,63,.28),transparent 70%),
+    linear-gradient(#123d27 0%,var(--noche) 60%,#08170f 100%) fixed;
+  color:var(--crema);font-family:var(--font-b);overflow-x:hidden;
+}
+#cielo{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.cae{position:absolute;top:-80px;width:var(--s);height:var(--s);animation:cae var(--d) linear var(--r) infinite;opacity:.85}
+.cae svg{width:100%;height:100%;animation:gira var(--g) ease-in-out infinite alternate}
+@keyframes cae{to{transform:translateY(115vh)}}
+@keyframes gira{from{transform:rotate(-50deg) translateX(-16px)}to{transform:rotate(50deg) translateX(16px)}}
+
+#entrada{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;text-align:center;padding:2rem;
+  background:radial-gradient(circle at 50% 40%,#2c7046,var(--noche) 75%);transition:opacity .9s,visibility .9s}
+#entrada.fuera{opacity:0;visibility:hidden}
+#entrada .gran{width:min(52vw,220px);filter:drop-shadow(0 0 40px rgba(255,210,63,.6));animation:late 2.6s ease-in-out infinite}
+@keyframes late{50%{transform:scale(1.07) rotate(8deg)}}
+#entrada p{font-family:var(--font-m);font-size:clamp(1.9rem,7vw,2.8rem);color:var(--sol)}
+button{font:inherit;cursor:pointer;border:0}
+.boton{background:linear-gradient(#ffe066,#ffc21a);color:var(--centro);font-weight:600;font-size:1.1rem;padding:.95rem 2.2rem;border-radius:999px;box-shadow:0 10px 30px rgba(255,210,63,.4);transition:transform .2s}
+.boton:hover{transform:scale(1.05)}
+:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+main{position:relative;z-index:2}
+.portada{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 1.4rem 16rem}
+.sol{position:absolute;top:8%;left:50%;width:min(80vw,520px);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(255,214,70,.35),transparent 68%);filter:blur(10px);pointer-events:none}
+h1{position:relative;font-family:var(--font-t);font-style:italic;font-weight:800;font-size:clamp(2.6rem,11.5vw,7rem);line-height:1.02;letter-spacing:-.01em;max-width:100%;padding:0 .3rem;
+  background:linear-gradient(#fff6b8,#ffd23f 55%,#f6a800);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 26px rgba(255,190,30,.4))}
+.heroFlor{position:relative;width:clamp(96px,26vw,170px);margin-bottom:1rem;filter:drop-shadow(0 0 34px rgba(255,210,63,.65));animation:giraLento 26s linear infinite}
+@keyframes giraLento{to{transform:rotate(360deg)}}
+.sub{position:relative;font-family:var(--font-m);font-size:clamp(1.6rem,5.4vw,2.6rem);line-height:1.2;margin-top:1.3rem;color:var(--crema);padding:0 .6rem;text-shadow:0 2px 14px rgba(0,0,0,.45);text-wrap:balance}
+.raya{position:relative;display:flex;align-items:center;justify-content:center;gap:.7rem;margin-top:1.4rem;color:var(--sol);font-size:1.3rem}
+.raya::before,.raya::after{content:"";width:min(18vw,90px);height:2px;background:linear-gradient(90deg,transparent,var(--sol))}
+.raya::after{transform:scaleX(-1)}
+
+.seccion{max-width:720px;margin:0 auto;padding:4.5rem 1.6rem 2rem;text-align:center}
+.seccion h2{font-family:var(--font-t);font-style:italic;font-weight:600;font-size:clamp(2rem,6.5vw,3.2rem);color:var(--sol);margin-bottom:1.4rem}
+.seccion p{font-size:clamp(1.05rem,3.3vw,1.3rem);line-height:1.85;max-width:32em;margin:0 auto 1rem}
+.frases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.3rem;max-width:980px;margin:0 auto;padding:2.5rem 1.4rem 3rem}
+.frase{background:linear-gradient(160deg,rgba(255,214,70,.18),rgba(255,246,207,.05));border:1px solid rgba(255,210,63,.4);
+  border-radius:30px 30px 30px 8px;padding:1.8rem 1.4rem;font-family:var(--font-m);font-size:1.8rem;line-height:1.25;color:var(--crema);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.frase:nth-child(even){border-radius:30px 30px 8px 30px}
+@media(min-width:700px){.frase:nth-child(even){transform:translateY(18px)}}
+.firma{font-family:var(--font-m)!important;font-size:2.4rem!important;color:var(--sol)}
+
+.final{position:relative;min-height:80svh;display:flex;flex-direction:column;justify-content:flex-start;padding-bottom:15rem}
+
+/* campo de flores */
+.campo{position:absolute;left:0;right:0;bottom:0;height:min(32vh,290px);pointer-events:none;overflow:hidden}
+.campo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60px;background:linear-gradient(transparent,#08170f 90%)}
+.tallo{position:absolute;bottom:-6px;width:0;height:100%;transform-origin:50% 100%;animation:mece var(--m) ease-in-out var(--r) infinite alternate}
+.tallo i{position:absolute;left:-2px;bottom:0;width:4px;height:var(--h);background:linear-gradient(#3aa05c,#123a22);border-radius:4px}
+.tallo i::before,.tallo i::after{content:"";position:absolute;bottom:38%;width:22px;height:11px;background:linear-gradient(90deg,#1d6b3a,#3fae63);border-radius:0 100% 0 100%}
+.tallo i::before{left:3px;transform:rotate(-25deg)}
+.tallo i::after{right:3px;transform:scaleX(-1) rotate(-25deg)}
+.tallo svg{position:absolute;left:calc(var(--s) / -2);width:var(--s);height:var(--s);bottom:calc(var(--h) - var(--s) * .45);filter:drop-shadow(0 4px 6px rgba(0,0,0,.35))}
+@keyframes mece{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+
+#musica{position:fixed;right:max(14px,env(safe-area-inset-right,0px));top:max(14px,env(safe-area-inset-top,0px));z-index:20;display:flex;gap:.5rem;align-items:center}
+#musica button{width:52px;height:52px;border-radius:50%;background:linear-gradient(#ffe066,#ffc21a);color:var(--centro);font-size:1.4rem;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+#archivo{display:none;font-size:.85rem;background:var(--crema);color:var(--centro);padding:.6rem .9rem;border-radius:14px}
+#archivo.ver{display:block}
+#archivo input{max-width:190px;font-size:.8rem}
+
+/* Luciérnagas */
+.luz{position:absolute;width:var(--s);height:var(--s);border-radius:50%;background:#ffe27a;box-shadow:0 0 12px 4px rgba(255,214,70,.7);opacity:0;animation:luz var(--d) ease-in-out var(--r) infinite}
+@keyframes luz{0%{opacity:0;transform:translate(0,0)}25%{opacity:.9}60%{opacity:.5;transform:translate(var(--x),var(--y))}100%{opacity:0;transform:translate(calc(var(--x)*1.6),calc(var(--y)*1.4))}}
+
+/* Carta */
+.cartaZona{max-width:640px;margin:0 auto;padding:3rem 1.2rem 1rem;text-align:center}
+.sobre{display:inline-block;background:none;position:relative;width:min(78vw,300px);aspect-ratio:3/2;filter:drop-shadow(0 16px 30px rgba(0,0,0,.45));animation:late 3s ease-in-out infinite;transition:opacity .7s,transform .7s}
+.sobre .cuerpo{position:absolute;inset:0;background:linear-gradient(160deg,#fff3c2,#ffd86b);border-radius:8px}
+.sobre .solapa{position:absolute;left:0;right:0;top:0;height:62%;background:linear-gradient(#ffe89a,#f5c53d);clip-path:polygon(0 0,100% 0,50% 100%);border-radius:8px 8px 0 0}
+.sobre .sello{position:absolute;left:50%;top:52%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff6b6b,#b3122b);display:grid;place-items:center;font-size:1.6rem;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+.sobre.abierto{opacity:0;transform:scale(.7) translateY(-30px);pointer-events:none;position:absolute;animation:none}
+.pista{font-family:var(--font-m);font-size:1.7rem;color:var(--sol);margin-top:1.2rem}
+.carta{display:none;text-align:left;background-color:#fff4cf;color:#4a2e12;border-radius:6px;padding:2.2rem 1.7rem 2.4rem;
+  font-family:var(--font-m);font-size:clamp(1.55rem,4.6vw,1.95rem);line-height:1.4;box-shadow:0 24px 60px rgba(0,0,0,.5);
+  background-image:linear-gradient(#fffdf3,rgba(255,240,190,.6)),repeating-linear-gradient(transparent 0 2.08rem,rgba(190,140,40,.16) 2.08rem 2.13rem)}
+.carta.ver{display:block;animation:desdobla 1.2s ease both}
+@keyframes desdobla{from{opacity:0;transform:translateY(30px) scale(.94)}}
+.carta p{margin:0 0 1rem;opacity:0;transform:translateY(10px);font-size:inherit;max-width:none}
+.carta.ver p{animation:aparece 1.6s ease forwards;animation-delay:calc(var(--i) * 2.4s + .9s)}
+@keyframes aparece{to{opacity:1;transform:none}}
+.carta .fin{text-align:right;color:#b3122b;font-size:1.15em}
+
+@media (prefers-reduced-motion:reduce){.cae,.cae svg,.tallo,#entrada .gran,.sobre,.luz,.heroFlor{animation:none}.carta p{opacity:1;animation:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="gP" cx="50%" cy="100%" r="100%"><stop offset="0" stop-color="#f59e0b"/><stop offset=".55" stop-color="#ffc61a"/><stop offset="1" stop-color="#ffe45c"/></radialGradient>
+    <radialGradient id="gP2" cx="50%" cy="100%" r="100%"><stop offset="0" stop-color="#ffb400"/><stop offset=".6" stop-color="#ffd83a"/><stop offset="1" stop-color="#fff08a"/></radialGradient>
+    <radialGradient id="gC" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#a5651f"/><stop offset=".6" stop-color="#5a3210"/><stop offset="1" stop-color="#33190a"/></radialGradient>
+    <path id="pet" d="M0,0 C-13,-12 -14,-38 0,-49 C14,-38 13,-12 0,0Z"/>
+    <symbol id="flor" viewBox="-50 -50 100 100">
+      <g id="capaA" fill="url(#gP)" stroke="#e08a00" stroke-width=".8"></g>
+      <g id="capaB" fill="url(#gP2)" stroke="#f0a400" stroke-width=".7" transform="scale(.82)"></g>
+      <circle r="15" fill="url(#gC)"/>
+      <g id="semillas" fill="#e0a850" opacity=".85"></g>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="entrada">
+  <svg class="gran" viewBox="0 0 100 100" aria-hidden="true"><use href="#flor"/></svg>
+  <p>Tengo algo para ti…</p>
+  <button class="boton" id="abrir">Abrir con música 🌼</button>
+</div>
+
+<div id="cielo" aria-hidden="true"></div>
+
+<div id="musica">
+  <div id="archivo">Elige <b>FLORES AMARILLAS.mp3</b><br><input type="file" id="pick" accept="audio/*"></div>
+  <button id="pp" aria-label="Pausar o reproducir música">🎵</button>
+</div>
+
+<audio id="audio" loop preload="auto"></audio>
+
+<main>
+  <section class="portada">
+    <div class="sol"></div>
+    <svg class="heroFlor" viewBox="0 0 100 100" aria-hidden="true"><use href="#flor"/></svg>
+    <h1>Flores<br>amarillas</h1>
+    <div class="raya">✦</div>
+    <p class="sub">para la más bonita de mi jardín</p>
+    <div class="campo"></div>
+  </section>
+
+  <section class="seccion">
+    <h2>Porque eres como ellas</h2>
+    <p>Las flores amarillas parecen pequeños soles: llegan sin avisar y de pronto todo se ve más bonito.</p>
+    <p>Así llegaste tú a mi vida. Contigo los días grises se vuelven luz, y hasta lo más simple se siente especial.</p>
+  </section>
+
+  <div class="frases">
+    <div class="frase">Tu sonrisa es mi flor favorita.</div>
+    <div class="frase">Contigo, todos los días parecen primavera.</div>
+    <div class="frase">Si pudiera, te regalaría un campo entero.</div>
+    <div class="frase">Eres mi girasol en los días nublados.</div>
+  </div>
+
+  <section class="cartaZona">
+    <h2 style="font-family:var(--font-t);font-style:italic;font-weight:600;font-size:clamp(2rem,6.5vw,3.2rem);color:var(--sol);margin-bottom:2rem">Una carta para ti</h2>
+    <button class="sobre" id="sobre" aria-label="Abrir la carta"><span class="cuerpo"></span><span class="solapa"></span><span class="sello">❤️</span></button>
+    <p class="pista" id="pista">Tócala con cuidado…</p>
+    <article class="carta" id="carta">
+      <p style="--i:0"><span class="nom">Mi amor</span>:</p>
+      <p style="--i:1">No soy bueno para escribir cosas bonitas, pero quería decirte lo que siento de verdad.</p>
+      <p style="--i:2">Contigo soy más feliz. Cuando estoy mal, me basta escucharte o verte y se me pasa todo. Y cuando estoy bien, lo primero que quiero es contártelo a ti.</p>
+      <p style="--i:3">Gracias por cuidarme, por aguantarme y por estar a mi lado, hasta cuando no me lo merezco. Sé que no soy perfecto, pero te prometo que todos los días voy a tratar de ser mejor para ti.</p>
+      <p style="--i:4">Escogí las flores amarillas porque cada vez que veo una me acuerdo de ti. Para mí tú eres eso: alegría y luz, aunque el día esté feo.</p>
+      <p style="--i:5">Te amo muchísimo, más de lo que te digo. Eres lo mejor que me ha pasado en la vida.</p>
+      <p class="fin" style="--i:6">Con todo mi amor,<br><span class="yo">Gaddiel</span> 🌼</p>
+    </article>
+  </section>
+
+  <section class="seccion final">
+    <h2>Un campo solo para ti</h2>
+    <p>No importa cuánto crezca este jardín: la flor más linda siempre serás tú.</p>
+    <p class="firma">Te quiero muchísimo ❤️</p>
+    <div class="campo"></div>
+  </section>
+</main>
+
+<script>
+(function(){
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  // Construir la flor (pétalos y semillas)
+  var A='',B='',S='',i;
+  for(i=0;i<14;i++) A+='<use href="#pet" transform="rotate('+(i*360/14)+')"/>';
+  for(i=0;i<14;i++) B+='<use href="#pet" transform="rotate('+(i*360/14+12.8)+')"/>';
+  for(i=1;i<=34;i++){
+    var r=Math.sqrt(i/34)*12.5, a=i*2.39996;
+    S+='<circle cx="'+(r*Math.cos(a)).toFixed(2)+'" cy="'+(r*Math.sin(a)).toFixed(2)+'" r="'+(0.7+i/34*.8).toFixed(2)+'"/>';
+  }
+  document.getElementById('capaA').innerHTML=A;
+  document.getElementById('capaB').innerHTML=B;
+  document.getElementById('semillas').innerHTML=S;
+  var flor='<svg viewBox="0 0 100 100" style="transform:rotate(RRdeg)"><use href="#flor"/></svg>';
+  function F(){return flor.replace('RR',Math.round(rnd(0,360)))}
+
+  // Flores que caen
+  var n=innerWidth<600?14:26,h='';
+  for(i=0;i<n;i++)
+    h+='<div class="cae" style="left:'+rnd(0,100).toFixed(1)+'%;--s:'+rnd(24,56).toFixed(0)+'px;--d:'+rnd(12,24).toFixed(1)+'s;--r:-'+rnd(0,24).toFixed(1)+'s;--g:'+rnd(2,4.5).toFixed(1)+'s">'+F()+'</div>';
+  document.getElementById('cielo').innerHTML=h;
+
+  // Campos de flores (portada y final)
+  var campos=document.querySelectorAll('.campo');
+  var cant=Math.ceil(innerWidth/46);
+  campos.forEach(function(c){
+    var alto=Math.min(innerHeight*.32,290), t='';
+    for(var j=0;j<cant;j++){
+      var s=rnd(46,86), hh=rnd(alto*.3,alto*.78);
+      t+='<div class="tallo" style="left:'+((j+.5)/cant*100+rnd(-1.2,1.2)).toFixed(1)+'%;--h:'+hh.toFixed(0)+'px;--s:'+s.toFixed(0)+'px;--m:'+rnd(2.4,4.6).toFixed(1)+'s;--r:-'+rnd(0,4).toFixed(1)+'s"><i></i>'+F()+'</div>';
+    }
+    c.innerHTML=t;
+  });
+
+
+  // Luciérnagas
+  var lz='';
+  for(i=0;i<22;i++) lz+='<span class="luz" style="left:'+rnd(2,98).toFixed(0)+'%;top:'+rnd(10,90).toFixed(0)+'%;--s:'+rnd(3,6).toFixed(1)+'px;--d:'+rnd(6,12).toFixed(1)+'s;--r:-'+rnd(0,10).toFixed(1)+'s;--x:'+rnd(-60,60).toFixed(0)+'px;--y:'+rnd(-70,20).toFixed(0)+'px"></span>';
+  var lc=document.createElement('div');lc.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:2';lc.innerHTML=lz;document.body.appendChild(lc);
+
+  // Carta: cambia aquí los nombres
+  var NOMBRE='Mi amor', FIRMA='Gaddiel';
+  document.querySelector('.nom').textContent=NOMBRE;
+  document.querySelector('.yo').textContent=FIRMA;
+  document.getElementById('sobre').addEventListener('click',function(){
+    this.classList.add('abierto');
+    document.getElementById('pista').style.display='none';
+    var c=document.getElementById('carta');c.classList.add('ver');
+    setTimeout(function(){c.scrollIntoView({behavior:'smooth',block:'center'})},300);
+  });
+
+  // Música
+  var audio=document.getElementById('audio'),pp=document.getElementById('pp'),
+      archivo=document.getElementById('archivo'),pick=document.getElementById('pick');
+  var rutas=['FLORES AMARILLAS.mp3','FLORES AMARILLAS.MP3','flores amarillas.mp3'],k=0;
+  function cargar(){ if(k>=rutas.length){archivo.classList.add('ver');return} audio.src=encodeURI(rutas[k++]); }
+  audio.addEventListener('error',cargar); cargar();
+  pick.addEventListener('change',function(){
+    if(pick.files[0]){audio.src=URL.createObjectURL(pick.files[0]);archivo.classList.remove('ver');audio.play().catch(function(){});}
+  });
+  document.getElementById('abrir').addEventListener('click',function(){
+    document.getElementById('entrada').classList.add('fuera');
+    audio.play().catch(function(){});
+  });
+  pp.addEventListener('click',function(){ if(audio.paused){audio.play().catch(function(){});}else{audio.pause();} });
+  audio.addEventListener('play',function(){pp.textContent='🎵'});
+  audio.addEventListener('pause',function(){pp.textContent='▶️'});
+})();
+</script>
+</body>
+</html>
